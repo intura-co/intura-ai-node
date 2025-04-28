@@ -33,8 +33,6 @@ const result = await client.invoke({
     }
   ]
 });
-
-// Start using the SDK
 ```
 
 ## Core Concepts

@@ -1,9 +1,15 @@
 {
   "name": "intura-ai-node",
-  "version": "0.0.2",
+  "version": "0.0.5.1",
   "description": "Node.js SDK for Intura API",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "readme": "README.md",
   "scripts": {
     "build": "tsc",
     "test": "jest",
@@ -16,7 +22,10 @@
     "sdk",
     "api",
     "client",
-    "typescript"
+    "typescript",
+    "intura",
+    "ai",
+    "chat"
   ],
   "repository": {
     "type": "git",
