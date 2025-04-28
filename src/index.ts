@@ -2,6 +2,13 @@
 import axios, { AxiosInstance, AxiosRequestConfig } from 'axios';
 import { v4 as uuidv4 } from 'uuid';
 
+/**
+ * @beta
+ * @warning This SDK is currently in beta and under active development.
+ * APIs may change without notice and additional features are still in development.
+ * Use with caution in production environments.
+ */
+
 export interface InturaSDKOptions {
   apiKey: string;
   baseURL?: string;
@@ -13,6 +20,12 @@ export interface RequestOptions {
   headers?: Record<string, string>;
 }
 
+/**
+ * @beta
+ * @warning This client is currently in beta and under active development.
+ * APIs may change without notice and additional features are still in development.
+ * Use with caution in production environments.
+ */
 export class InturaClient {
   private client: AxiosInstance;
   private apiKey: string;
@@ -49,6 +62,10 @@ export class InturaClient {
     );
   }
 
+  /**
+   * Get experiment details by ID
+   * @beta This method is in beta and may change in future releases
+   */
   async getDetailExperiment(experimentId: string, options?: RequestOptions): Promise<any> {
     const response = await this.client.get(`/v1/experiment/detail?experiment_id=${experimentId}`, {
       params: options?.params,
@@ -57,6 +74,10 @@ export class InturaClient {
     return response.data;
   }
 
+  /**
+   * Build a chat model for an experiment
+   * @beta This method is in beta and may change in future releases
+   */
   async buildChatModel(data: any, experiment_id: string, options?: RequestOptions): Promise<any> {
     const response = await this.client.post(`/v1/experiment/build/chat?experiment_id=${experiment_id}`, data, {
       headers: options?.headers,
@@ -64,6 +85,10 @@ export class InturaClient {
     return response.data.data;
   }
 
+  /**
+   * Generate inferences from an experiment
+   * @beta This method is in beta and may change in future releases
+   */
   async invoke(data: any, options?: RequestOptions): Promise<any> {
     const response = await this.client.post(`/v1/experiment/inference/chat`, data, {
       headers: options?.headers,
@@ -74,6 +99,7 @@ export class InturaClient {
 
   /**
    * Get a resource by ID
+   * @beta This method is in beta and may change in future releases
    */
   async getResource(id: string, options?: RequestOptions): Promise<any> {
     const response = await this.client.get(`/resources/${id}`, {
@@ -85,6 +111,7 @@ export class InturaClient {
 
   /**
    * Create a new resource
+   * @beta This method is in beta and may change in future releases
    */
   async createResource(data: any, options?: RequestOptions): Promise<any> {
     const response = await this.client.post('/resources', data, {
@@ -95,6 +122,7 @@ export class InturaClient {
 
   /**
    * Update an existing resource
+   * @beta This method is in beta and may change in future releases
    */
   async updateResource(id: string, data: any, options?: RequestOptions): Promise<any> {
     const response = await this.client.put(`/resources/${id}`, data, {
@@ -105,6 +133,7 @@ export class InturaClient {
 
   /**
    * Delete a resource
+   * @beta This method is in beta and may change in future releases
    */
   async deleteResource(id: string, options?: RequestOptions): Promise<void> {
     await this.client.delete(`/resources/${id}`, {
@@ -114,6 +143,7 @@ export class InturaClient {
 
   /**
    * List resources with pagination
+   * @beta This method is in beta and may change in future releases
    */
   async listResources(options?: RequestOptions & { page?: number; limit?: number }): Promise<any> {
     const params = {
