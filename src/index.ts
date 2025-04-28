@@ -93,7 +93,7 @@ export class InturaClient {
     const response = await this.client.post(`/v1/experiment/inference/chat`, data, {
       headers: options?.headers,
     });
-    return response.data.data;
+    return response.data.data.length === 1 ? response.data.data[0] : response.data.data;
   }
 
 

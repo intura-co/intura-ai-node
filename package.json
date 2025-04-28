@@ -1,6 +1,6 @@
 {
   "name": "intura-ai-node",
-  "version": "0.0.5.1",
+  "version": "0.0.7",
   "description": "Node.js SDK for Intura API",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
