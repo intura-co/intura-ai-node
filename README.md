@@ -10,6 +10,15 @@
 npm install intura-ai-node
 ```
 
+## Get API Key and Experiment ID
+
+Before getting started, you'll need to obtain your API key and experiment ID from the Intura dashboard:
+
+1. Visit https://dashboard.intura.co
+2. Log in to your account
+3. Navigate to the Integration section to find your API key
+4. Create or select an experiment to get your experiment ID
+
 ## Quick Start
 
 ```javascript
