@@ -34,13 +34,14 @@ export class InturaClient {
     this.apiKey = options.apiKey;
     
     const config: AxiosRequestConfig = {
-      baseURL: options.baseURL || 'https://intura-be-external-server-566556985624.asia-southeast2.run.app',
+      baseURL: options.baseURL || 'https://api.intura.co',
       timeout: options.timeout || 10000,
       headers: {
         'x-request-id': uuidv4(),
         'x-timestamp': String(Date.now()),
         'x-api-key': this.apiKey,
         'Content-Type': 'application/json',
+        'Authorization': `Bearer ${this.apiKey}`
       }
       
     };
